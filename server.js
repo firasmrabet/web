@@ -39,8 +39,15 @@ app.use((err, req, res, next) => {
 
 // Configure CORS
 app.use(cors({
-    origin: process.env.FRONTEND_ORIGIN || 'https://bedoui-firas-projects-e7e8a63d.vercel.app',
-    credentials: true
+    origin: [
+        'http://localhost:5173',
+        'https://marwen-final-firas-mrabett-git-main-firas-projects-e7e8a63d.vercel.app',
+        'https://bd-f1d6.onrender.com',
+        'https://bedoui-firas-projects-e7e8a63d.vercel.app',
+        'https://shaggy-antonie-firass-mrabett-84286cd4.koyeb.app'
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
 // Parse JSON bodies
@@ -63,7 +70,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Send quote route
-app.post('/send-quote', async (req, res) => {
+app.post('', async (req, res) => {
     try {
         const { cartItems, totalPrice, customerInfo } = req.body;
         
@@ -134,3 +141,4 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log('Environment:', process.env.NODE_ENV);
     console.log('Frontend Origin:', process.env.FRONTEND_ORIGIN);
 });
+
