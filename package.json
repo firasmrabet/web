@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "main": "server.js",
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "scripts": {
     "start": "node server.js",
     "build": "npm install",
@@ -22,5 +19,9 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
+
